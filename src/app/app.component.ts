@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import type { Task } from './Task';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +11,31 @@ export class AppComponent {
 
   filter: 'all' | 'active' | 'done' = 'all';
 
-  allItems = [
-    // { title: 'eat', description: 'eat something', done: true },
-    // { title: 'sleep', description: 'sleep enough', done: false },
-    { description: 'eat', done: true },
-    { description: 'sleep', done: false },
-    { description: 'play', done: false },
-    { description: 'laugh', done: false },
+  allItems: Task[] = [
+    {
+      title: 'eat',
+      description: 'eat something',
+      done: true,
+      dueDate: '25/07/2022',
+    },
+    {
+      title: 'drink',
+      description: 'drink something',
+      done: true,
+      dueDate: '25/07/2022',
+    },
+    {
+      title: 'walk',
+      description: 'make a walk',
+      done: false,
+      dueDate: '25/07/2022',
+    },
+    {
+      title: 'sleep',
+      description: 'sleep enough',
+      done: false,
+      dueDate: '25/07/2022',
+    },
   ];
 
   get items() {
@@ -28,14 +47,17 @@ export class AppComponent {
     );
   }
 
-  addItem(description: string) {
+  addItem(title: string, description: string, dueDate: string) {
+    // addItem({ title, description, dueDate }: Task) {
     this.allItems.unshift({
+      title,
+      dueDate,
       description,
       done: false,
     });
   }
 
-  remove(item: any) {
+  remove(item: Task) {
     this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }

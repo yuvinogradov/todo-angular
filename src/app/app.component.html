@@ -4,14 +4,17 @@
 
   <!-- <input #title placeholder="title" (keyup.enter)="addItem(title.value); title.value = ''" class="lg-text-input"
     id="addItemTitle" /> -->
-  <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
-    class="lg-text-input" id="addItemInput" />
+  <!-- <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+    class="lg-text-input" id="addItemInput" /> -->
+  <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button> -->
+
+  <input #title placeholder="Title" class="lg-text-input" id="titleInput" />
+  <input #description placeholder="Description" class="lg-text-input" id="descriptionInput" />
+  <input #dueDate placeholder="Due date" class="lg-text-input" id="dueDateInput" />
 
 
-
-
-  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
-
+  <button class="btn-primary" (click)="addItem(title.value, description.value, dueDate.value )">Add</button>
+  <!-- <button class="btn-primary" (click)="addItem(title.value, description.value, dueDate.value)">Add</button> -->
 
   <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
    -->
