@@ -14,18 +14,14 @@
 
   <!-- This section shows only if user clicks Edit button -->
   <div *ngIf="editable">
-    <!-- <input class="sm-text-input" placeholder="edit item" [value]="item.description" #editedItem
-      (keyup.enter)="saveItem(editedItem.value)"> -->
     <input class="sm-text-input" placeholder="edit title" [value]="item.title" #editedTitle>
     <input class="sm-text-input" placeholder="edit description" [value]="item.description" #editedDescription>
     <input class="sm-text-input" placeholder="edit due date" [value]="item.dueDate" #editedDueDate>
 
     <div class="btn-wrapper">
       <button class="btn" (click)="editable = !editable">Cancel</button>
-      <!-- <button class="btn btn-save"
-      (click)="saveItem(editedTitle.value, editedDescription.value,editedDueDate.value)">Save</button> -->
       <button class="btn btn-save"
-      (click)="saveItem({title:editedTitle.value,description:editedDescription.value, dueDate:editedDueDate.value})">Save</button>
+        (click)="saveItem({title:editedTitle.value,description:editedDescription.value, dueDate:editedDueDate.value})">Save</button>
     </div>
   </div>
 

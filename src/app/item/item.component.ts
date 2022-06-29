@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-// import { Item } from '../item';
-import type { Task } from '../types/task'; //?!!!
+import type { Task } from '../types/task';
 
 @Component({
   selector: 'app-item',
@@ -19,7 +18,6 @@ export class ItemComponent {
   @Input() newItem: string = '';
   @Output() remove = new EventEmitter<Task>();
 
-  // saveItem(title:string, description: string, dueDate: string) {
   saveItem({ title, description, dueDate }: Task) {
     if (!title) return;
     this.editable = false;

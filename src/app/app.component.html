@@ -7,14 +7,9 @@
   <input #dueDate placeholder="Due date" class="lg-text-input" id="dueDateInput" />
 
 
-  <!-- <button class="btn-primary" (click)="addItem(title.value, description.value, dueDate.value )">Add</button> -->
   <button class="btn-primary"
     (click)="addItem({title:title.value, description:description.value, dueDate:dueDate.value})">Add</button>
 
-  <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
-   -->
-
-  <!-- Buttons that show all, still to do, or done items on click -->
   <div class="btn-wrapper">
     <button class="btn btn-menu" [class.active]="filter == 'all'" (click)="filter = 'all'">
       All

@@ -47,7 +47,6 @@ export class AppComponent {
     );
   }
 
-  // addItem(title: string, description: string, dueDate: string) {
   addItem({ title, description, dueDate }: Task) {
     this.allItems.unshift({
       title,
