@@ -19,9 +19,12 @@ export class ItemComponent {
   @Input() newItem: string = '';
   @Output() remove = new EventEmitter<Task>();
 
-  saveItem(title:string, description: string, dueDate: string) {
-    if (!description) return;
+  // saveItem(title:string, description: string, dueDate: string) {
+  saveItem({ title, description, dueDate }: Task) {
+    if (!title) return;
     this.editable = false;
+    this.item.title = title;
     this.item.description = description;
+    this.item.dueDate = dueDate;
   }
 }

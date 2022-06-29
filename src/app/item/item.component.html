@@ -22,8 +22,10 @@
 
     <div class="btn-wrapper">
       <button class="btn" (click)="editable = !editable">Cancel</button>
+      <!-- <button class="btn btn-save"
+      (click)="saveItem(editedTitle.value, editedDescription.value,editedDueDate.value)">Save</button> -->
       <button class="btn btn-save"
-        (click)="saveItem(editedTitle.value, editedDescription.value,editedDueDate.value)">Save</button>
+      (click)="saveItem({title:editedTitle.value,description:editedDescription.value, dueDate:editedDueDate.value})">Save</button>
     </div>
   </div>
 
