@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import type { Task } from './Task';
+import type { Task } from './types/task';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +48,7 @@ export class AppComponent {
   }
 
   // addItem(title: string, description: string, dueDate: string) {
-    addItem({ title, description, dueDate }: Task) {
+  addItem({ title, description, dueDate }: Task) {
     this.allItems.unshift({
       title,
       dueDate,
